@@ -1,0 +1,9 @@
+.Heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: -webkit-xxx-large;
+  background: antiquewhite;
+  padding: 1rem;
+  font-weight: bold;
+}

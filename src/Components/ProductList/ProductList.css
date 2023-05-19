@@ -1,0 +1,8 @@
+.Grid {
+  display: grid;
+  position: relative;
+  left: 13rem;
+  top: 2rem;
+  grid-template-columns: 72rem 55rem;
+  justify-content: space-between;
+}
