@@ -48,9 +48,9 @@ function App() {
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand href="#">Shopping</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -59,29 +59,11 @@ function App() {
               navbarScroll
             >
               <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
-              <NavDropdown title="Link" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="#" disabled>
-                Link
-              </Nav.Link>
+              <Nav.Link href="#action2">Store</Nav.Link>
+              <Nav.Link href="#action3">About</Nav.Link>
             </Nav>
             <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-success">Cart</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
@@ -93,8 +75,9 @@ function App() {
             return (
               <li key={index}>
                 <h3>Product:{product.title}</h3>
-                <p>Price : {product.price}</p>
                 <img src={product.imageUrl} alt="images" />
+                <h6>Price : {product.price}</h6>
+
                 <Button>ADD TO CART</Button>
               </li>
             );
