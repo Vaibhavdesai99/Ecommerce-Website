@@ -6,3 +6,10 @@
   grid-template-columns: 72rem 55rem;
   justify-content: space-between;
 }
+
+.button {
+  display: flex;
+  padding: 0px 3px;
+  justify-content: space-between;
+  gap: 1rem;
+}

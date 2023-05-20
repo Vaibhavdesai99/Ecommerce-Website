@@ -1,0 +1,25 @@
+/* Cart.css */
+.modal {
+  .modalBbody {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .cartItem {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+  }
+  .cartItemImage {
+    width: 80px;
+    height: auto;
+  }
+  .msg {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: gray;
+  }
+}

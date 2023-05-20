@@ -3,8 +3,7 @@ import "./Header.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Badge, Button } from "react-bootstrap";
-
+import Cart from "../Cart.js/Cart";
 const Header = () => {
   return (
     <div className="Main Header">
@@ -16,11 +15,7 @@ const Header = () => {
             <Nav.Link href="#STORE">STORE</Nav.Link>
             <Nav.Link href="#ABOUT">ABOUT</Nav.Link>
           </Nav>
-          {/* <Button variant="outline-primary">CART : 0</Button>{" "} */}
-          <Button variant="primary">
-            Cart <Badge bg="secondary">9</Badge>
-            <span className="visually-hidden">unread messages</span>
-          </Button>
+          <Cart />
         </Container>
       </Navbar>
     </div>
