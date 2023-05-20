@@ -7,7 +7,7 @@ import Cart from "../Cart.js/Cart";
 const Header = () => {
   return (
     <div className="Main Header">
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" fixed="top">
         <Container>
           <Navbar.Brand href="#home">KEPTOWN SHOPCART</Navbar.Brand>
           <Nav className="header">
