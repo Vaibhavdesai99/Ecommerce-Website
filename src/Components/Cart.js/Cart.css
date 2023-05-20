@@ -23,3 +23,17 @@
     color: gray;
   }
 }
+.remove-button {
+  width: 147%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: red;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 20px;
+}
