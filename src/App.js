@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
-// import Summary from "./Components/Summary/Summary";
+import Home from "./Components/Home/Home";
 import Context from "./Components/Store/Context";
 import Productlist from "./Components/ProductList/Productlist";
 import Footer from "./Components/Footer/Footer";
@@ -12,7 +12,7 @@ const App = () => {
     <Context>
       <Header />
       <Routes>
-        {/* <Route exact path="/" element={<Summary />} /> */}
+        <Route exact path="/Home" element={<Home />} />
         <Route path="/Store" element={<Productlist />} />
         <Route path="/about" element={<About />} />
       </Routes>

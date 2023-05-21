@@ -11,9 +11,9 @@ const Header = () => {
     <div className="Main Header">
       <Navbar bg="dark" variant="dark" fixed="top">
         <Container>
-          <Navbar.Brand href="#home">KEPTOWN SHOPCART</Navbar.Brand>
+          <Navbar.Brand href="#home">KEPTOWN </Navbar.Brand>
           <Nav className="header">
-            <NavLink to="/">HOME</NavLink>
+            <NavLink to="/Home">HOME</NavLink>
             <NavLink to="/Store">STORE</NavLink>
             <NavLink to="/about">ABOUT</NavLink>
           </Nav>

@@ -4,5 +4,13 @@
   justify-content: space-between;
   flex-direction: row;
   gap: 3rem;
-  margin-right: 8rem;
+  margin-right: 2rem;
+}
+
+.header :hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+.Main.Header .header a {
+  text-decoration: none;
 }
