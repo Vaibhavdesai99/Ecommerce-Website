@@ -4,7 +4,13 @@ const Home = () => {
   return (
     <div>
       <div className="home-page">
-        <h1 style={{ fontWeight: "bold", fontSize: " -webkit-xxx-large" }}>
+        <h1
+          style={{
+            fontWeight: "bold",
+            fontSize: " -webkit-xxx-large",
+            fontFamily: "Merriweather",
+          }}
+        >
           The Generics
         </h1>
         <button className="latest-album">Get our Latest Album</button>

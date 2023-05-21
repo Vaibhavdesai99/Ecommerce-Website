@@ -11,14 +11,22 @@ const About = () => {
           width: "70%",
           marginLeft: "35rem",
           marginTop: "1rem",
-          fontFamily: "Metal Mania",
+
           fontSize: "30px",
           padding: "20px",
+          fontFamily: "Merriweather",
         }}
       >
         ABOUT
       </h1>
-      <p style={{ width: "70%", margin: "0 auto", marginTop: "3rem" }}>
+      <p
+        style={{
+          width: "70%",
+          margin: "0 auto",
+          marginTop: "3rem",
+          fontFamily: "Merriweather",
+        }}
+      >
         <img
           src={BrowserImage}
           alt="imagesofBrowser"

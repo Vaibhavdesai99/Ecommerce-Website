@@ -5,6 +5,7 @@
   top: 2rem;
   grid-template-columns: 72rem 55rem;
   justify-content: space-between;
+  font-family: "Merriweather", serif;
 }
 
 .button {
@@ -12,4 +13,5 @@
   padding: 0px 3px;
   justify-content: space-between;
   gap: 1rem;
+  font-family: "Merriweather", serif;
 }

@@ -3,6 +3,7 @@
   .modalBbody {
     max-height: 400px;
     overflow-y: auto;
+    font-family: "Merriweather", serif;
   }
   .cartItem {
     padding: 10px;
@@ -10,6 +11,7 @@
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     border-radius: 4px;
+    font-family: "Merriweather", serif;
   }
   .cartItemImage {
     width: 80px;
@@ -21,6 +23,7 @@
     padding: 10px;
     font-weight: bold;
     color: gray;
+    font-family: "Merriweather", serif;
   }
 }
 .remove-button {
@@ -36,4 +39,5 @@
   text-align: center;
   font-weight: bold;
   margin-left: 20px;
+  font-family: "Merriweather", serif;
 }

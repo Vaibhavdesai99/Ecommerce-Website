@@ -51,14 +51,23 @@ const Cart = () => {
     }
   };
 
+  //  cart Button showHandler :
+
   return (
     <>
-      <Button variant="primary" onClick={handleOpenModal}>
+      <Button
+        variant="primary"
+        onClick={handleOpenModal}
+        style={{ fontFamily: "Merriweather" }}
+      >
         Cart <Badge bg="danger">{cart.length}</Badge>
       </Button>
+
       <Modal show={showModal} onHide={handleCloseModal} className="modal">
         <Modal.Header closeButton>
-          <Modal.Title>CART ITEMS ADDED </Modal.Title>
+          <Modal.Title style={{ fontFamily: "Merriweather" }}>
+            CART ITEMS ADDED{" "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body className="modalBbody">
           {cart.length > 0 ? (
@@ -109,12 +118,15 @@ const Cart = () => {
           )}
         </Modal.Body>
         <Modal.Footer>
-          <span>Total AMOUNT OF CART ITEMS: {total}</span>
+          <span style={{ fontFamily: "Merriweather" }}>
+            Total AMOUNT OF CART ITEMS: {total}
+          </span>
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
           {showAlert && (
             <Alert
+              style={{ fontFamily: "Merriweather" }}
               variant="success"
               onClose={() => setShowAlert(false)}
               dismissible

@@ -12,6 +12,7 @@
   margin-bottom: 1rem;
   color: #333;
   text-align: center;
+  font-family: "Merriweather", serif;
 }
 
 .latest-album {
@@ -22,6 +23,7 @@
   border-radius: 4px;
   margin-bottom: 2rem;
   font-size: 1.2rem;
+  font-family: "Merriweather", serif;
   cursor: pointer;
 }
 
@@ -38,6 +40,7 @@
   font-size: 2rem;
   margin: 2rem 0;
   color: #333;
+  font-family: "Merriweather", serif;
 }
 
 .tour-list {
@@ -45,6 +48,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  font-family: "Merriweather", serif;
 }
 
 .tour-item {
@@ -61,6 +65,7 @@
   text-align: center;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Merriweather", serif;
 }
 
 .tour-date {
@@ -68,18 +73,21 @@
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #333;
+  font-family: "Merriweather", serif;
 }
 
 .tour-place {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #555;
+  font-family: "Merriweather", serif;
 }
 
 .tour-venue {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   color: #777;
+  font-family: "Merriweather", serif;
 }
 
 .buy-btn {
@@ -90,4 +98,5 @@
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
+  font-family: "Merriweather", serif;
 }
