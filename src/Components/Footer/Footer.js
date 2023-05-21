@@ -8,6 +8,7 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div>The Generics</div>
+
       <a href="https://www.facebook.com/">
         <Facebook color="black" size="3rem" />
       </a>
