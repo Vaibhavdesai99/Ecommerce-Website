@@ -1,0 +1,44 @@
+h1 {
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+
+form {
+  max-width: 400px;
+  margin: 5rem auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Merriweather", serif;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: "Merriweather", serif;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Merriweather", serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

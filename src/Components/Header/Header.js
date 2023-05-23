@@ -12,12 +12,15 @@ const Header = () => {
       <Navbar bg="dark" variant="dark" fixed="top">
         <Container>
           <Navbar.Brand href="#home" style={{ fontFamily: "Merriweather" }}>
-            KEPTOWN{" "}
+            KEPTOWN
           </Navbar.Brand>
           <Nav className="header">
-            <NavLink to="/Home">HOME</NavLink>
+            <NavLink activeClasses="active" to="/Home">
+              HOME
+            </NavLink>
             <NavLink to="/Store">STORE</NavLink>
             <NavLink to="/about">ABOUT</NavLink>
+            <NavLink to="/contactUs">CONTACT US</NavLink>
           </Nav>
           <Cart />
         </Container>

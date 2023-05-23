@@ -9,7 +9,7 @@ const About = () => {
       <h1
         style={{
           width: "70%",
-          marginLeft: "35rem",
+          marginLeft: "15rem",
           marginTop: "1rem",
 
           fontSize: "30px",
