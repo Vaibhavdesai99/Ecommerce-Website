@@ -1,0 +1,54 @@
+.ProductDetails {
+  display: flex;
+  margin-top: 5%;
+  font-family: "Merriweather", serif;
+}
+
+.price {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  font-family: "Merriweather", serif;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Merriweather", serif;
+}
+.image {
+  margin-top: 2rem;
+  width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+  border-radius: 10px;
+}
+
+.description {
+  font-size: 16px;
+  margin-top: 2rem;
+  font-family: "Merriweather", serif;
+  margin-left: 3rem;
+}
+
+.titleandprice {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 10rem;
+  margin-left: 3rem;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+
+.reviews {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+
+.desReview {
+  display: flex;
+  flex-direction: column;
+  gap: 11rem;
+}

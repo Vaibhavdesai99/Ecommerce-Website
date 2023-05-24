@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ProductList.css";
 import { CartState } from "../Store/Context";
 import Button from "react-bootstrap/Button";
@@ -20,9 +21,16 @@ const Productlist = () => {
       <div className="Grid">
         <Row xs={1} md={2} className="g-4">
           {products.map((product, index) => (
-            <Col key={index}>
+            <Col key={product.title}>
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={product.imageUrl} />
+
+                {/* Link to more details */}
+                <Link to={`/Store/${product.id}`}>
+                  {console.log(product.id)}
+                  More Details
+                </Link>
+
                 <Card.Body>
                   <Card.Title>{product.title}</Card.Title>
                   <Card.Text>$:{product.price}</Card.Text>
