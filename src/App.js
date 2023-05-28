@@ -7,6 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import About from "./Components/About/About";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 import AuthForm from "./Components/LogInPage/AuthForm";
 
@@ -17,9 +18,23 @@ const App = () => {
       <Routes>
         <Route path="/Home" element={<Home />} />
 
-        <Route path="/Store" element={<Productlist />} />
-
-        <Route path="/Store/:id" element={<ProductDetails />} />
+        {/* Private route for the Productlist component */}
+        <Route
+          path="/Store"
+          element={
+            <PrivateRoute>
+              <Productlist />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/Store/:id"
+          element={
+            <PrivateRoute>
+              <ProductDetails />
+            </PrivateRoute>
+          }
+        />
 
         <Route path="/about" element={<About />} />
 
