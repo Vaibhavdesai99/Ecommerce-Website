@@ -8,6 +8,8 @@ import About from "./Components/About/About";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
+import AuthForm from "./Components/LogInPage/AuthForm";
+
 const App = () => {
   return (
     <>
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
 
         <Route path="/ContactUs" element={<ContactUs />} />
+
+        <Route path="LoginPage" element={<AuthForm />} />
       </Routes>
       <Footer />
     </>

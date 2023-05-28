@@ -25,7 +25,7 @@ const Productlist = () => {
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={product.imageUrl} />
 
-                {/* Link to more details */}
+                {/* Link to more details : when user click on More Details then new link open  */}
                 <Link to={`/Store/${product.id}`}>
                   {console.log(product.id)}
                   More Details

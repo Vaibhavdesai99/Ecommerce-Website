@@ -5,12 +5,15 @@ import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Context from "./Components/Store/Context";
+import { AuthContextProvider } from "./Components/Store/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Context>
-      <App />
-    </Context>
-  </BrowserRouter>
+  <AuthContextProvider>
+    <BrowserRouter>
+      <Context>
+        <App />
+      </Context>
+    </BrowserRouter>
+  </AuthContextProvider>
 );

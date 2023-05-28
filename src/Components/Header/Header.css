@@ -6,6 +6,15 @@
   margin-right: 6rem;
   font-family: "Merriweather", serif;
 }
+.headerWithoutCart {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  text-decoration: none;
+  margin-right: auto;
+  justify-content: space-between;
+  margin-left: 10rem;
+}
 
 /* .header :hover {
   font-weight: bold;
