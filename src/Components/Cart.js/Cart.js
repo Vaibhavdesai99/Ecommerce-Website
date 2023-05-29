@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.css";
+import axios from "axios";
 import {
   Modal,
   Button,
@@ -10,31 +11,43 @@ import {
   Image,
   Alert,
 } from "react-bootstrap";
-import { CartState } from "../Store/Context";
 
 const Cart = () => {
-  const {
-    state: { cart },
-    dispatch,
-  } = CartState();
-  //   To show Modal :
   const [showModal, setShowModal] = useState(false);
-  // Purchase Handler :To show alert message inside that modal:
   const [showAlert, setShowAlert] = useState(false);
-
   const [total, setTotal] = useState(0);
-
-  //useEffect hook is used to calculate the total amount of the cart items after the component re-renders
+  const [data, setData] = useState([]);
+  // To Calculate Total amount :
   useEffect(() => {
     const calculateTotal = () => {
-      const totalPrice = cart.reduce(
+      const totalPrice = data.reduce(
         (acc, curr) => acc + Number(curr.price),
         0
       );
       setTotal(totalPrice);
     };
     calculateTotal();
-  }, [cart]);
+  }, [data]);
+
+  const userEmail = localStorage
+    .getItem("email")
+    .replace("@", "")
+    .replace(".", "");
+
+  const fetchCartItems = async () => {
+    try {
+      const response = await axios.get(
+        `https://crudcrud.com/api/c0a3709afc3744869d68f9b18adf2d1d/${userEmail}`
+      );
+      console.log(response);
+      setData(response.data);
+    } catch (error) {
+      console.log("error:", error);
+    }
+  };
+  useEffect(() => {
+    fetchCartItems();
+  }, [showModal]);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -46,12 +59,19 @@ const Cart = () => {
 
   // Purchase Handler :
   const handlePurchase = () => {
-    if (cart.length > 0) {
+    if (data.length > 0) {
       setShowAlert(true);
     }
   };
 
-  //  cart Button showHandler :
+  // To Remove Data from CartItems:
+  const RemoveItem = async (id) => {
+    const res = await axios.delete(
+      `https://crudcrud.com/api/c0a3709afc3744869d68f9b18adf2d1d/${userEmail}/${id}`
+    );
+    fetchCartItems();
+    console.log(res);
+  };
 
   return (
     <>
@@ -60,19 +80,19 @@ const Cart = () => {
         onClick={handleOpenModal}
         style={{ fontFamily: "Merriweather" }}
       >
-        Cart <Badge bg="danger">{cart.length}</Badge>
+        Cart <Badge bg="danger"></Badge>
       </Button>
 
       <Modal show={showModal} onHide={handleCloseModal} className="modal">
         <Modal.Header closeButton>
           <Modal.Title style={{ fontFamily: "Merriweather" }}>
-            CART ITEMS ADDED{" "}
+            CART ITEMS ADDED : Total CartItems {data.length}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="modalBbody">
-          {cart.length > 0 ? (
+          {data.length > 0 ? (
             <>
-              {cart.map((prod) => (
+              {data.map((prod) => (
                 <ListGroupItem key={prod.id} className="cartItem">
                   <Row className="align-items-center">
                     <Col md={4}>
@@ -95,12 +115,7 @@ const Cart = () => {
                       <div className="button">
                         <button
                           type="button"
-                          onClick={() =>
-                            dispatch({
-                              type: "REMOVE_FROM_CART",
-                              payload: prod,
-                            })
-                          }
+                          onClick={() => RemoveItem(prod._id)}
                           className="remove-button"
                         >
                           Remove

@@ -19,7 +19,6 @@ const AuthForm = () => {
   // Form submit Handler  : =
   const submitHandler = async (e) => {
     e.preventDefault();
-
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
@@ -45,10 +44,17 @@ const AuthForm = () => {
         if (response.ok) {
           // Sign-in successful
           const data = await response.json();
-          console.log(data);
+          console.log(data.email);
+          localStorage.setItem("email", data.email);
+
           navigate("/Store");
           const idToken = data.idToken;
           authCtx.login(idToken);
+        } else {
+          const errorData = await response.json();
+          let errorMessage = "Authentication Failed";
+          console.log(errorData);
+          alert("Login failed: " + errorMessage);
         }
       } else {
         // Sending sign-up request if user does not have account then he need to first create new account :
@@ -80,8 +86,7 @@ const AuthForm = () => {
           if (errorData && errorData.error && errorData.error.message) {
             errorMessage = errorData.error.message;
           }
-
-          throw new Error(errorMessage);
+          alert(errorMessage);
         }
       }
     } catch (error) {

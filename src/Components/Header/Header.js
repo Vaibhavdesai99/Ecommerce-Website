@@ -22,15 +22,23 @@ const Header = () => {
               location.pathname === "/Store" ? "header" : "headerWithoutCart "
             }
           >
-            <NavLink activeClasses="active" to="/Home">
+            <NavLink style={{ textDecoration: "none" }} to="/Home">
               HOME
             </NavLink>
-            <NavLink to="/Store">STORE</NavLink>
-            <NavLink to="/about">ABOUT</NavLink>
+            <NavLink style={{ textDecoration: "none" }} to="/Store">
+              STORE
+            </NavLink>
+            <NavLink style={{ textDecoration: "none" }} to="/about">
+              ABOUT
+            </NavLink>
 
-            <NavLink to="/ContactUs">CONTACT US</NavLink>
+            <NavLink style={{ textDecoration: "none" }} to="/ContactUs">
+              CONTACT US
+            </NavLink>
 
-            <NavLink to="/LoginPage">Login</NavLink>
+            <NavLink style={{ textDecoration: "none" }} to="/LoginPage">
+              Login
+            </NavLink>
           </Nav>
           {location.pathname === "/Store" && <Cart />}
         </Container>

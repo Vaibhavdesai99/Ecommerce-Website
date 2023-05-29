@@ -7,11 +7,13 @@
   box-shadow: 0 20px 15px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   text-align: center;
+  font-family: "Merriweather", serif;
 }
 
 .auth h1 {
   text-align: center;
   color: white;
+  font-family: "Merriweather", serif;
 }
 
 .control {
@@ -23,6 +25,7 @@
   color: white;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-family: "Merriweather", serif;
 }
 
 .control input {
@@ -34,6 +37,7 @@
   width: 100%;
   text-align: left;
   padding: 0.25rem;
+  font-family: "Merriweather", serif;
 }
 
 .actions {
@@ -51,6 +55,7 @@
   border: 1px solid #9f5ccc;
   border-radius: 4px;
   padding: 0.5rem 2.5rem;
+  font-family: "Merriweather", serif;
 }
 
 .actions button:hover {

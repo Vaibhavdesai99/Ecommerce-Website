@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ProductList.css";
 import { CartState } from "../Store/Context";
@@ -7,13 +7,39 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Summary from "../Summary/Summary";
+import axios from "axios";
 const Productlist = () => {
+  const [email, setEmail] = useState("");
   const {
     state: { cart, products },
     dispatch,
   } = CartState();
 
   console.log(cart);
+
+  useEffect(() => {
+    const userEmail = localStorage
+      .getItem("email")
+      .replace("@", "")
+      .replace(".", "");
+    setEmail(userEmail);
+  }, []);
+
+  console.log(email);
+
+  // Post req crudcrud :
+  const handleAddToCart = async (product) => {
+    try {
+      const response = await axios.post(
+        `https://crudcrud.com/api/c0a3709afc3744869d68f9b18adf2d1d/${email}`,
+        product
+      );
+      alert("product added to cart ...");
+      console.log(response);
+    } catch (error) {
+      console.log("error:", error);
+    }
+  };
 
   return (
     <>
@@ -49,9 +75,10 @@ const Productlist = () => {
                       </Button>
                     ) : (
                       <Button
-                        onClick={() =>
-                          dispatch({ type: "ADD_TO_CART", payload: product })
-                        }
+                        onClick={() => {
+                          handleAddToCart(product);
+                          dispatch({ type: "ADD_TO_CART", payload: product });
+                        }}
                         variant="primary"
                       >
                         ADD TO CART
