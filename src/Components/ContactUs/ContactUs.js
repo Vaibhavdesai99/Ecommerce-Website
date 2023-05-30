@@ -15,7 +15,7 @@ const ContactUs = () => {
         email: email,
         phone: phone,
       };
-      // In end of the URL always we have to insert route / node .
+      // In end of the URL always we have to insert route / node and .json also.
       const response = await fetch(
         "https://ecommerce-login-details-default-rtdb.firebaseio.com/userDetails.json",
         {

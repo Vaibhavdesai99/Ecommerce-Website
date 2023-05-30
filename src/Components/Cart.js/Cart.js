@@ -37,9 +37,10 @@ const Cart = () => {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        `https://crudcrud.com/api/c0a3709afc3744869d68f9b18adf2d1d/${userEmail}`
+        `https://crudcrud.com/api/2b9c6b49faac4501b544bbfa548ea4c9/${userEmail}`
       );
       console.log(response);
+
       setData(response.data);
     } catch (error) {
       console.log("error:", error);
@@ -67,7 +68,7 @@ const Cart = () => {
   // To Remove Data from CartItems:
   const RemoveItem = async (id) => {
     const res = await axios.delete(
-      `https://crudcrud.com/api/c0a3709afc3744869d68f9b18adf2d1d/${userEmail}/${id}`
+      `https://crudcrud.com/api/2b9c6b49faac4501b544bbfa548ea4c9/${userEmail}/${id}`
     );
     fetchCartItems();
     console.log(res);
@@ -86,7 +87,7 @@ const Cart = () => {
       <Modal show={showModal} onHide={handleCloseModal} className="modal">
         <Modal.Header closeButton>
           <Modal.Title style={{ fontFamily: "Merriweather" }}>
-            CART ITEMS ADDED : Total CartItems {data.length}
+            CART ITEMS ADDED : Total CartItems = {data.length}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="modalBbody">

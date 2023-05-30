@@ -25,8 +25,9 @@ const AuthForm = () => {
     setIsLoading(true);
 
     try {
+      // If user ALREADY HAVE ACCOUNT THEN LOG-IN .
+
       if (isLogin) {
-        // Sending Log-in request
         const response = await fetch(
           "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDj7gWjQQKUk0lv_P4S7T4pOMTt7jEh37M",
           {
@@ -43,10 +44,11 @@ const AuthForm = () => {
         );
         if (response.ok) {
           // Sign-in successful
+          alert("Login Successfully");
           const data = await response.json();
           console.log(data.email);
           localStorage.setItem("email", data.email);
-
+          // whenever the POST req is succ means user login then , redirect him to store page .
           navigate("/Store");
           const idToken = data.idToken;
           authCtx.login(idToken);
@@ -57,7 +59,8 @@ const AuthForm = () => {
           alert("Login failed: " + errorMessage);
         }
       } else {
-        // Sending sign-up request if user does not have account then he need to first create new account :
+        // If user DONT HAVE ACCOUNT THEN SIGN -UP .
+
         const response = await fetch(
           "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDj7gWjQQKUk0lv_P4S7T4pOMTt7jEh37M",
           {
@@ -77,12 +80,13 @@ const AuthForm = () => {
           // Handle successful sign-up
           const data = await response.json();
           console.log(data);
+          alert("Account Created Successfully.");
         } else {
           // Sign-up failed
           const errorData = await response.json();
           let errorMessage = "Authentication Failed";
 
-          // To show full wrror if there is error ...
+          // To show full error if there is error ...
           if (errorData && errorData.error && errorData.error.message) {
             errorMessage = errorData.error.message;
           }

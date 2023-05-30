@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
@@ -6,10 +6,16 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Cart from "../Cart.js/Cart";
 import { useLocation } from "react-router-dom";
+import AuthContext from "../Store/AuthContext";
 
 const Header = () => {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
   const location = useLocation();
-  console.log(location);
+
+  const Logout = () => {
+    authCtx.logout();
+  };
   return (
     <div className="Main Header">
       <Navbar bg="dark" variant="dark" fixed="top">
@@ -36,9 +42,19 @@ const Header = () => {
               CONTACT US
             </NavLink>
 
-            <NavLink style={{ textDecoration: "none" }} to="/LoginPage">
-              Login
-            </NavLink>
+            {isLoggedIn ? (
+              <NavLink
+                style={{ textDecoration: "none" }}
+                to="/LoginPage"
+                onClick={Logout}
+              >
+                LogOut
+              </NavLink>
+            ) : (
+              <NavLink style={{ textDecoration: "none" }} to="/LoginPage">
+                LogIn
+              </NavLink>
+            )}
           </Nav>
           {location.pathname === "/Store" && <Cart />}
         </Container>

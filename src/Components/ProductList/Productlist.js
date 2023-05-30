@@ -31,11 +31,11 @@ const Productlist = () => {
   const handleAddToCart = async (product) => {
     try {
       const response = await axios.post(
-        `https://crudcrud.com/api/c0a3709afc3744869d68f9b18adf2d1d/${email}`,
+        `https://crudcrud.com/api/2b9c6b49faac4501b544bbfa548ea4c9/${email}`,
         product
       );
       alert("product added to cart ...");
-      console.log(response);
+      console.log(response.data);
     } catch (error) {
       console.log("error:", error);
     }
