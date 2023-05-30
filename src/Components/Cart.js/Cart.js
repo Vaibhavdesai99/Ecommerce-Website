@@ -37,7 +37,7 @@ const Cart = () => {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        `https://crudcrud.com/api/2b9c6b49faac4501b544bbfa548ea4c9/${userEmail}`
+        `https://crudcrud.com/api/0a59d8d3fa20479eb0f488fdd84f6474/${userEmail}`
       );
       console.log(response);
 
@@ -68,7 +68,7 @@ const Cart = () => {
   // To Remove Data from CartItems:
   const RemoveItem = async (id) => {
     const res = await axios.delete(
-      `https://crudcrud.com/api/2b9c6b49faac4501b544bbfa548ea4c9/${userEmail}/${id}`
+      `https://crudcrud.com/api/0a59d8d3fa20479eb0f488fdd84f6474/${userEmail}/${id}`
     );
     fetchCartItems();
     console.log(res);

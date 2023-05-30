@@ -34,7 +34,7 @@ const ContactUs = () => {
       }
       //response get parse here:
       const data = await response.json();
-
+      alert("Response send successfully.");
       console.log(data);
     } catch (error) {
       setError(error.message);

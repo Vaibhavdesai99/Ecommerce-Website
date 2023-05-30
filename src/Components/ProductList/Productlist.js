@@ -31,7 +31,7 @@ const Productlist = () => {
   const handleAddToCart = async (product) => {
     try {
       const response = await axios.post(
-        `https://crudcrud.com/api/2b9c6b49faac4501b544bbfa548ea4c9/${email}`,
+        `https://crudcrud.com/api/0a59d8d3fa20479eb0f488fdd84f6474/${email}`,
         product
       );
       alert("product added to cart ...");
