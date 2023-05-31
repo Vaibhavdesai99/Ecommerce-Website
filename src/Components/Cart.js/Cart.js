@@ -29,18 +29,17 @@ const Cart = () => {
     calculateTotal();
   }, [data]);
 
-  const userEmail = localStorage
-    .getItem("email")
-    .replace("@", "")
-    .replace(".", "");
+  const userEmail = localStorage.getItem("email");
+  const formattedEmail = userEmail
+    ? userEmail.replace("@", "").replace(".", "")
+    : "";
 
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        `https://crudcrud.com/api/0a59d8d3fa20479eb0f488fdd84f6474/${userEmail}`
+        `https://crudcrud.com/api/0a59d8d3fa20479eb0f488fdd84f6474/${formattedEmail}`
       );
       console.log(response);
-
       setData(response.data);
     } catch (error) {
       console.log("error:", error);
